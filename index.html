@@ -314,114 +314,6 @@
     font-weight: 700;
   }
 
-  /* ── POLL ── */
-  .poll-section {
-    background: #fff;
-    border: 1px solid #e8e3da;
-    border-radius: 12px;
-    padding: 28px;
-    margin: 0 0 48px;
-  }
-  .poll-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--forest);
-    margin-bottom: 6px;
-  }
-  .poll-intro { font-size: 13px; color: var(--stone); margin-bottom: 20px; }
-  .poll-question { margin-bottom: 22px; }
-  .poll-question-label {
-    font-weight: 600;
-    font-size: 13.5px;
-    color: var(--bark);
-    margin-bottom: 10px;
-  }
-  .poll-options { display: flex; flex-wrap: wrap; gap: 8px; }
-  .poll-btn {
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 2px solid #ddd;
-    background: #fff;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--bark);
-    cursor: pointer;
-    transition: all 0.15s;
-    user-select: none;
-  }
-  .poll-btn:hover { border-color: var(--forest); color: var(--forest); }
-  .poll-btn.selected {
-    background: var(--forest);
-    border-color: var(--forest);
-    color: #fff;
-  }
-  .poll-btn.selected-gold {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: #fff;
-  }
-  .poll-btn.selected-sky {
-    background: var(--sky);
-    border-color: var(--sky);
-    color: #fff;
-  }
-  .poll-name-row {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
-  }
-  .poll-name-row label { font-size: 13px; font-weight: 600; color: var(--bark); }
-  .poll-name-input {
-    padding: 7px 12px;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 13px;
-    color: var(--bark);
-    outline: none;
-    width: 160px;
-    transition: border-color 0.15s;
-  }
-  .poll-name-input:focus { border-color: var(--forest); }
-  .poll-submit {
-    padding: 10px 24px;
-    background: var(--forest);
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.15s;
-    margin-top: 4px;
-  }
-  .poll-submit:hover { background: #1e3329; }
-  .poll-results {
-    margin-top: 20px;
-    display: none;
-  }
-  .poll-results.visible { display: block; }
-  .result-group { margin-bottom: 16px; }
-  .result-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--stone); margin-bottom: 8px; }
-  .result-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; font-size: 13px; }
-  .result-bar-wrap { flex: 1; background: #f0ebe3; border-radius: 4px; height: 8px; overflow: hidden; }
-  .result-bar { height: 100%; border-radius: 4px; background: var(--forest); transition: width 0.4s ease; }
-  .result-name { min-width: 100px; color: var(--bark); font-weight: 500; }
-  .result-choice { color: var(--stone); }
-  .responses-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-  .response-chip {
-    background: #f0ebe3;
-    border-radius: 6px;
-    padding: 5px 12px;
-    font-size: 12px;
-    color: var(--bark);
-  }
-  .response-chip strong { font-weight: 600; }
-
   /* ── DIVIDER ── */
   .divider {
     text-align: center;
@@ -453,7 +345,6 @@
   @media print {
     .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
     .event-card { break-inside: avoid; }
-    .poll-section { display: none; }
   }
 </style>
 </head>
@@ -883,129 +774,13 @@
   </ul>
 </div>
 
-<!-- ──────────────── POLL ──────────────── -->
-<div class="poll-section">
-  <h2>What Are You Into?</h2>
-  <p class="poll-intro">Answer a few quick questions so everyone can see what the group is up for. Helps us figure out what to prioritize — no wrong answers.</p>
-
-  <div class="poll-name-row">
-    <label for="poll-name">Your name:</label>
-    <input type="text" id="poll-name" class="poll-name-input" placeholder="e.g. A, D, M…">
-  </div>
-
-  <div class="poll-question" id="q1">
-    <div class="poll-question-label">1. How do you feel about hiking?</div>
-    <div class="poll-options">
-      <button class="poll-btn" onclick="selectBtn(this,'q1','The bigger the better')">The bigger the better</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q1','Up for a moderate trail')">Up for a moderate trail</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q1','Easy walks & views only')">Easy walks & views only</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q1','I\'ll stay at the house')">I'll stay at the house</button>
-    </div>
-  </div>
-
-  <div class="poll-question" id="q2">
-    <div class="poll-question-label">2. How interested are you in stargazing at Cherry Springs?</div>
-    <div class="poll-options">
-      <button class="poll-btn" onclick="selectBtn(this,'q2','Yes — let\'s do it')">Yes — let's do it</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q2','Maybe, if the timing works')">Maybe, if the timing works</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q2','I\'d rather stay in')">I'd rather stay in</button>
-    </div>
-  </div>
-
-  <div class="poll-question" id="q3">
-    <div class="poll-question-label">3. What kind of evenings sound good to you?</div>
-    <div class="poll-options">
-      <button class="poll-btn" onclick="selectBtn(this,'q3','Going out for dinner')">Going out for dinner</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q3','Grilling at the house')">Grilling at the house</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q3','Mix of both')">Mix of both</button>
-    </div>
-  </div>
-
-  <div class="poll-question" id="q4">
-    <div class="poll-question-label">4. Padel — how much are you in?</div>
-    <div class="poll-options">
-      <button class="poll-btn" onclick="selectBtn(this,'q4','All in, let\'s play every day')">All in, every day</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q4','Happy to play once or twice')">Once or twice sounds right</button>
-      <button class="poll-btn" onclick="selectBtn(this,'q4','I\'ll watch and laugh')">I'll watch and laugh</button>
-    </div>
-  </div>
-
-  <button class="poll-submit" onclick="submitPoll()">Submit my answers</button>
-
-  <div class="poll-results" id="poll-results">
-    <div style="margin-bottom:16px; font-weight:600; font-size:14px; color:var(--forest);">What the group said so far:</div>
-    <div id="results-content"></div>
-  </div>
-</div>
-
 </div><!-- /container -->
 
 <footer>
   Liberty, PA · June 25–28, 2026 · Share this link with everyone before the trip
 </footer>
 
-<script>
-  const answers = {};
-  const colorClasses = ['selected', 'selected-gold', 'selected-sky'];
 
-  function selectBtn(btn, question, value) {
-    const btns = btn.parentElement.querySelectorAll('.poll-btn');
-    btns.forEach(b => b.classList.remove('selected','selected-gold','selected-sky'));
-    const idx = ['q1','q2','q3','q4'].indexOf(question);
-    btn.classList.add(colorClasses[idx % colorClasses.length]);
-    answers[question] = value;
-  }
-
-  function submitPoll() {
-    const name = document.getElementById('poll-name').value.trim();
-    if (!name) { alert('Add your name first!'); return; }
-    const required = ['q1','q2','q3','q4'];
-    for (const q of required) {
-      if (!answers[q]) { alert('Answer all four questions first.'); return; }
-    }
-
-    // Store in localStorage as fallback (note: won't persist across devices)
-    const key = 'liberty2026_responses';
-    let responses = [];
-    try { responses = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) {}
-    // Remove any prior submission from same name
-    responses = responses.filter(r => r.name.toLowerCase() !== name.toLowerCase());
-    responses.push({ name, ...answers, ts: Date.now() });
-    try { localStorage.setItem(key, JSON.stringify(responses)); } catch(e) {}
-
-    renderResults(responses);
-    document.getElementById('poll-results').classList.add('visible');
-    document.querySelector('.poll-submit').textContent = 'Update my answers';
-    document.querySelector('.poll-submit').style.background = 'var(--stone)';
-  }
-
-  function renderResults(responses) {
-    const qLabels = {
-      q1: 'Hiking',
-      q2: 'Cherry Springs Stargazing',
-      q3: 'Evening style',
-      q4: 'Padel enthusiasm'
-    };
-    let html = '';
-    for (const [q, label] of Object.entries(qLabels)) {
-      html += `<div class="result-group"><div class="result-label">${label}</div><div class="responses-list">`;
-      for (const r of responses) {
-        if (r[q]) html += `<div class="response-chip"><strong>${r.name}:</strong> ${r[q]}</div>`;
-      }
-      html += `</div></div>`;
-    }
-    document.getElementById('results-content').innerHTML = html;
-  }
-
-  // Load any saved responses on page load
-  try {
-    const saved = JSON.parse(localStorage.getItem('liberty2026_responses') || '[]');
-    if (saved.length > 0) {
-      renderResults(saved);
-      document.getElementById('poll-results').classList.add('visible');
-    }
-  } catch(e) {}
-</script>
 
 </body>
 </html>
