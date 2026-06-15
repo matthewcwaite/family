@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Liberty, PA — Family Long Weekend · June 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --forest:   #2D4A3E;
+    --stone:    #8B7355;
+    --cream:    #F7F3EC;
+    --bark:     #3D2B1F;
+    --mist:     #C8D8CC;
+    --sky:      #7BA7BC;
+    --gold:     #C9963A;
+    --light:    #FAFAF7;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--light);
+    color: var(--bark);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 64px 32px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23C8D8CC' opacity='0.15'/%3E%3C/svg%3E") repeat;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    font-size: 14px;
+    color: var(--mist);
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  /* ── INTRO NOTE ── */
+  .intro-note {
+    background: var(--cream);
+    border-bottom: 1px solid #e0d9cf;
+    padding: 20px 24px;
+    text-align: center;
+    font-size: 14px;
+    color: #6a5e50;
+    font-style: italic;
+  }
+
+  /* ── LEGEND ── */
+  .legend {
+    background: #fff;
+    border-bottom: 1px solid #e8e3da;
+    padding: 14px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .dot-hike    { background: var(--forest); }
+  .dot-meal    { background: var(--gold); }
+  .dot-leisure { background: var(--sky); }
+  .dot-travel  { background: #bbb; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+
+  /* ── DAY SECTIONS ── */
+  .day-section { padding: 40px 0 12px; }
+  .day-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 28px;
+    border-bottom: 2px solid var(--forest);
+    padding-bottom: 12px;
+  }
+  .day-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: var(--forest);
+    line-height: 1;
+  }
+  .day-date {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 36px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    bottom: 8px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--forest), var(--mist));
+  }
+
+  .event { position: relative; margin-bottom: 20px; }
+  .event-dot {
+    position: absolute;
+    left: -31px;
+    top: 6px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--light);
+    z-index: 1;
+  }
+  .event-dot.hike    { background: var(--forest); }
+  .event-dot.meal    { background: var(--gold); }
+  .event-dot.leisure { background: var(--sky); }
+  .event-dot.travel  { background: #bbb; }
+
+  .event-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 1px solid #e8e3da;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    transition: box-shadow 0.2s;
+  }
+  .event-card:hover { box-shadow: 0 3px 10px rgba(0,0,0,0.08); }
+
+  .event-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .event-time {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--stone);
+    white-space: nowrap;
+    margin-top: 3px;
+  }
+  .event-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--bark);
+    flex: 1;
+  }
+  .event-body {
+    margin-top: 8px;
+    font-size: 13.5px;
+    color: #5a4e42;
+  }
+
+  .travel-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #f5f0e8;
+    border-radius: 6px;
+    padding: 7px 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--stone);
+    font-weight: 500;
+  }
+  .warning-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fdf6ec;
+    border-radius: 6px;
+    padding: 7px 12px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #8a6020;
+    font-weight: 500;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+  }
+  .tag-optional { background: #f3eaf7; color: #6a3a8a; }
+  .tag-all      { background: #eaf2f7; color: #3a6880; }
+
+  /* ── MEAL BLOCKS ── */
+  .meal-block {
+    background: #fffbf4;
+    border: 1px solid #f0e0c0;
+    border-left: 4px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 8px;
+  }
+  .meal-block-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .meal-option { font-size: 13px; color: #5a4e42; margin-bottom: 6px; }
+  .meal-option strong { color: var(--bark); }
+  .meal-option .note { font-style: italic; color: #888; }
+
+  /* ── RAINY DAY ── */
+  .rainy-section {
+    background: #EDF3F7;
+    border-radius: 12px;
+    padding: 28px;
+    margin: 32px 0;
+    border: 1px solid #C8D8E8;
+  }
+  .rainy-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .rainy-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: #3a6880;
+  }
+  .rainy-intro { font-size: 13px; color: #5a6e7a; margin-bottom: 16px; }
+  .rainy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .rainy-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 14px;
+    border: 1px solid #c8d8e8;
+  }
+  .rainy-card-title { font-weight: 600; font-size: 13.5px; color: #3a6880; margin-bottom: 4px; }
+  .rainy-card p { font-size: 12.5px; color: #5a6e7a; }
+
+  /* ── TIPS BOX ── */
+  .tips-box {
+    background: var(--forest);
+    color: var(--cream);
+    border-radius: 12px;
+    padding: 28px;
+    margin: 24px 0 32px;
+  }
+  .tips-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    margin-bottom: 14px;
+    color: #fff;
+  }
+  .tips-list { list-style: none; display: grid; gap: 9px; }
+  .tips-list li {
+    font-size: 13px;
+    padding-left: 18px;
+    position: relative;
+    color: var(--mist);
+  }
+  .tips-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  /* ── POLL ── */
+  .poll-section {
+    background: #fff;
+    border: 1px solid #e8e3da;
+    border-radius: 12px;
+    padding: 28px;
+    margin: 0 0 48px;
+  }
+  .poll-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--forest);
+    margin-bottom: 6px;
+  }
+  .poll-intro { font-size: 13px; color: var(--stone); margin-bottom: 20px; }
+  .poll-question { margin-bottom: 22px; }
+  .poll-question-label {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: var(--bark);
+    margin-bottom: 10px;
+  }
+  .poll-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .poll-btn {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--bark);
+    cursor: pointer;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .poll-btn:hover { border-color: var(--forest); color: var(--forest); }
+  .poll-btn.selected {
+    background: var(--forest);
+    border-color: var(--forest);
+    color: #fff;
+  }
+  .poll-btn.selected-gold {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: #fff;
+  }
+  .poll-btn.selected-sky {
+    background: var(--sky);
+    border-color: var(--sky);
+    color: #fff;
+  }
+  .poll-name-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .poll-name-row label { font-size: 13px; font-weight: 600; color: var(--bark); }
+  .poll-name-input {
+    padding: 7px 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--bark);
+    outline: none;
+    width: 160px;
+    transition: border-color 0.15s;
+  }
+  .poll-name-input:focus { border-color: var(--forest); }
+  .poll-submit {
+    padding: 10px 24px;
+    background: var(--forest);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    margin-top: 4px;
+  }
+  .poll-submit:hover { background: #1e3329; }
+  .poll-results {
+    margin-top: 20px;
+    display: none;
+  }
+  .poll-results.visible { display: block; }
+  .result-group { margin-bottom: 16px; }
+  .result-label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--stone); margin-bottom: 8px; }
+  .result-row { display: flex; align-items: center; gap: 10px; margin-bottom: 5px; font-size: 13px; }
+  .result-bar-wrap { flex: 1; background: #f0ebe3; border-radius: 4px; height: 8px; overflow: hidden; }
+  .result-bar { height: 100%; border-radius: 4px; background: var(--forest); transition: width 0.4s ease; }
+  .result-name { min-width: 100px; color: var(--bark); font-weight: 500; }
+  .result-choice { color: var(--stone); }
+  .responses-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .response-chip {
+    background: #f0ebe3;
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    color: var(--bark);
+  }
+  .response-chip strong { font-weight: 600; }
+
+  /* ── DIVIDER ── */
+  .divider {
+    text-align: center;
+    padding: 8px 0;
+    color: var(--stone);
+    font-size: 18px;
+    letter-spacing: 6px;
+    opacity: 0.4;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--cream);
+    border-top: 1px solid #e0d9cf;
+    padding: 24px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--stone);
+  }
+
+  @media (max-width: 600px) {
+    .hero { padding: 44px 20px 40px; }
+    .timeline { padding-left: 28px; }
+    .event-dot { left: -25px; }
+    .timeline::before { left: 8px; }
+    .poll-name-row { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media print {
+    .hero { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .event-card { break-inside: avoid; }
+    .poll-section { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">June 25–28, 2026 · Liberty, Pennsylvania</div>
+  <h1>A Long Weekend<br><em>in the PA Wilds</em></h1>
+  <div class="hero-sub">Pine Creek Country · Tioga County</div>
+</div>
+
+<!-- INTRO NOTE -->
+<div class="intro-note">
+  All times are loose suggestions — treat this as a menu of ideas, not a schedule. Pick what sounds good, skip what doesn't, and make it up as you go.
+</div>
+
+<!-- LEGEND -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-hike"></div> Outdoor / Hike</div>
+  <div class="legend-item"><div class="legend-dot dot-meal"></div> Food & Drink</div>
+  <div class="legend-item"><div class="legend-dot dot-leisure"></div> Leisure</div>
+  <div class="legend-item"><div class="legend-dot dot-travel"></div> Travel</div>
+</div>
+
+<div class="container">
+
+<!-- ──────────────── THURSDAY ──────────────── -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">Thursday</div>
+    <div class="day-date">June 25 · Arrival Day</div>
+  </div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="event-dot travel"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Arrive & Get Settled</div>
+          <div class="event-time">Around 4 PM</div>
+        </div>
+        <div class="event-body">
+          Claim rooms, drop bags, take a breath. Washington Courthouse folks and the Boston crew are both looking at about 7 hours — everyone deserves a minute to decompress before anything else happens.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot leisure"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Try the Padel Court</div>
+          <div class="event-time">Around 5 PM</div>
+        </div>
+        <div class="event-body">
+          Nobody in the group has played — which makes it perfect. Padel is on a smaller court with walls in play (think tennis meets squash), very forgiving for beginners, and genuinely fun to figure out together. Even 30–45 minutes of rallying is a great first-night icebreaker. No pressure, all laughs.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Dinner at the House</div>
+          <div class="event-time">Around 6:30 PM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🍽 Suggestion — Cook In</div>
+          <div class="meal-option">Arrival night is best kept easy — stock up at Martin's Pantry on the way in (see tips below) and put together whatever's low-effort: burgers on the grill, pasta, sheet-pan chicken. The point is the porch and the people, not the food.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot leisure"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Evening: Settle In Together</div>
+          <div class="event-time">After dinner</div>
+        </div>
+        <div class="event-body">
+          Card games, a movie, or just sitting around talking. A low-key first night is the right call — it's the first time the whole group has been in the same place, which is its own kind of good.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider">· · ·</div>
+
+<!-- ──────────────── FRIDAY ──────────────── -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">Friday</div>
+    <div class="day-date">June 26 · Canyon Day</div>
+  </div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Breakfast</div>
+          <div class="event-time">Around 8 AM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🍳 Options</div>
+          <div class="meal-option"><strong>Willow Street Cafe & Bakery</strong> — on Willow St in Liberty, rated 4.9★. Real maple syrup, fresh-baked goods, egg wraps. Opens 7 AM. A genuine local gem and just minutes from most Liberty rentals — good way to start a big day.</div>
+          <div class="meal-option"><strong>Cook in</strong> — bagels, eggs, fruit. Save the cafe for Saturday if the group wants to sleep in.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot hike"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">PA Grand Canyon — Leonard Harrison State Park</div>
+          <div class="event-time">Around 9:30 AM</div>
+        </div>
+        <div class="travel-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~45 min from Liberty via Rt 287 N → Rt 660 W
+        </div>
+        <div class="event-body" style="margin-top:10px;">
+          One of the most dramatic views in Pennsylvania — a 1,450-foot gorge carved by Pine Creek. The overlook at Leonard Harrison is just a few minutes' walk from the parking lot (paved, easy), with a visitor center, concessions, and restrooms on site. Worth the drive for the view alone.<br><br>
+
+          <strong>For those who want more trail:</strong> The Turkey Path descends 1.7 miles and 800 feet to the canyon floor at Pine Creek — steep, rewarding, and about 2–3 hours round trip. At the bottom you can connect to the Pine Creek Rail Trail (flat gravel) and wander as far as you like before climbing back up.<br><br>
+
+          One easy approach: hikers drop down the Turkey Path while anyone who prefers can enjoy the overlook, explore the rim trail (1.5 mi, very gentle), grab a snack from the concessions stand, and soak up the views until everyone reconvenes at the parking lot.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Lunch in Wellsboro</div>
+          <div class="event-time">Around 1 PM</div>
+        </div>
+        <div class="travel-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~15 min from Leonard Harrison to Wellsboro's Main St
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🍔 Options in Wellsboro</div>
+          <div class="meal-option"><strong>The Roost</strong> — 83 Main St. Creative burgers, PA craft beers on tap, homemade kettle chips. Rated 4.6★. Opens noon on Fridays. Perfect post-trail spot. <span class="note">Closed Mondays.</span></div>
+          <div class="meal-option"><strong>Beck's Bistro</strong> — 104 Main St. More bistro-leaning: brisket quesadilla, buffalo chicken mac & cheese. Rated 4.6★. Good for a mixed group of eaters.</div>
+          <div class="meal-option"><strong>Wellsboro Diner</strong> — 19 Main St. A classic American diner, cheap and no-frills. Great if the group just wants something quick. <span class="note">Closes at 2 PM.</span></div>
+        </div>
+        <div class="event-body" style="margin-top:8px;">
+          Wellsboro is a well-preserved Victorian town with gas-lit streetlamps. Worth a short stroll of Main St after eating.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot leisure"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Afternoon: Back at the House</div>
+          <div class="event-time">Around 3:30 PM</div>
+        </div>
+        <div class="event-body">
+          Decompress. More padel if there's energy. Read on the porch. Nap. This is the kind of unplanned time family trips are actually made of.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Dinner</div>
+          <div class="event-time">Around 6:30 PM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🍽 Options</div>
+          <div class="meal-option"><strong>The Farmer's Table</strong> (Blossburg, ~20 min north) — hearty American cooking, locally loved. Steak, bison burgers, homemade mac & cheese and pies. Rated 4.7★. Great for a big group and good value. Open until 7:30 PM.</div>
+          <div class="meal-option"><strong>Yorkholo Brewing Co.</strong> (Mansfield, ~30 min north) — craft brewery in a gorgeous restored building, grass-fed burgers, fresh pasta. Rated 4.3★. A livelier evening option.</div>
+          <div class="meal-option"><strong>Grill night at the house</strong> — everyone pitches in. Good excuse to sit outside until dark.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot leisure"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Optional: Cherry Springs Stargazing</div>
+          <div class="event-time">After dinner (9:30 PM+)</div>
+        </div>
+        <div class="event-body">
+          <span class="tag tag-optional">Optional</span><br>
+          Cherry Springs State Park is one of the darkest skies east of the Mississippi — the Milky Way is visible with the naked eye on a clear night. It's a late commitment (drive out after dinner, arrive around 11 PM), but unlike most stargazing spots, it requires no hiking — just blankets, chairs, and lying on your back looking up.<br><br>
+          <strong>What to bring:</strong> warm layers (summer nights get cold up there), blankets or reclining chairs, red flashlights only (white light ruins night vision for everyone). Check the forecast and moon phase beforehand — a night close to the new moon is ideal.
+        </div>
+        <div class="travel-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~1 hr 30 min each way via Rt 44 S toward Coudersport. Best Friday or Saturday; pick the clearer night.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider">· · ·</div>
+
+<!-- ──────────────── SATURDAY ──────────────── -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">Saturday</div>
+    <div class="day-date">June 27 · Into the Wild</div>
+  </div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Breakfast</div>
+          <div class="event-time">Around 8:30 AM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🥞 Options</div>
+          <div class="meal-option"><strong>Willow Street Cafe</strong> — blueberry waffles, biscuits & gravy, real maple syrup. If you haven't been yet, this is a must. Opens 7 AM.</div>
+          <div class="meal-option"><strong>Slow morning at the house</strong> — especially if Friday night ran late. Use up what's in the fridge, make coffee, move at whatever pace feels right.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot hike"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">McIntyre Wild Area — Rock Run</div>
+          <div class="event-time">Around 10 AM</div>
+        </div>
+        <div class="travel-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~35 min from Liberty via Rt 14 S toward Roaring Branch
+        </div>
+        <div class="event-body" style="margin-top:10px;">
+          The local gem. Rock Run is a stunning crystal-clear creek running through a forested hollow, with waterfalls, swimming holes, and dramatic terrain. Rated 4.8★. Trails run anywhere from 3 to 6+ miles depending on how far you follow the creek. Expect creek crossings and some overgrown sections — trail shoes and bug spray are essential.<br><br>
+
+          Those who'd rather have a relaxed morning can skip this one and explore Liberty, walk the path along the trout stream at Liberty Community Park, or hang around the house with a book. The McIntyre crew can plan to be back by early afternoon.
+        </div>
+        <div class="warning-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Reviews mention black rattlesnakes in the area. Stay on trail and watch your footing around rocky outcrops — they're not aggressive but worth knowing about.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Lunch Back at the House</div>
+          <div class="event-time">Around 1:30 PM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🥪 Suggestion — Cook In</div>
+          <div class="meal-option">Sandwiches, salads, Martin's Pantry subs from the fridge. Easy and fast — hikers will be hungry. A good moment for everyone to swap stories from the morning.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot leisure"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Afternoon: Whatever Sounds Good</div>
+          <div class="event-time">Around 2:30 PM</div>
+        </div>
+        <div class="event-body">
+          Read, nap, play more padel, walk into Liberty, or nothing at all. For anyone with more trail energy, the <strong>Golden Eagle Trail</strong> near Cammal (~50 min away) is a beautiful 4-mile loop up to Raven Rocks with canyon views — a solid option for an afternoon add-on.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Dinner — The Main Event</div>
+          <div class="event-time">Around 6 PM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🥩 Options</div>
+          <div class="meal-option"><strong>Grill night at the house</strong> — make it an occasion. Steaks, ribs, corn, a proper salad. Everyone cooks something. Saturday night feels right as a group meal at home.</div>
+          <div class="meal-option"><strong>The Farmer's Table</strong> (Blossburg, ~20 min) — worth it for the homemade pies alone. If you didn't go Friday, go tonight.</div>
+          <div class="meal-option"><strong>Old Antlers Inn</strong> (~45 min, near Wellsboro) — classic American, good atmosphere for a celebratory group dinner. Call ahead for a party of 6.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot leisure"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Evening: Cherry Springs or Staying In</div>
+          <div class="event-time">After dinner</div>
+        </div>
+        <div class="event-body">
+          <span class="tag tag-optional">Optional</span><br>
+          If Cherry Springs didn't happen Friday, tonight's the other chance. Or just stay put — sit outside with the group under whatever sky you have. Even in Liberty, away from city light, the nights are noticeably clear. A long last evening together.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider">· · ·</div>
+
+<!-- ──────────────── SUNDAY ──────────────── -->
+<div class="day-section">
+  <div class="day-header">
+    <div class="day-label">Sunday</div>
+    <div class="day-date">June 28 · Heading Home</div>
+  </div>
+  <div class="timeline">
+
+    <div class="event">
+      <div class="event-dot meal"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Last Breakfast Together</div>
+          <div class="event-time">Around 9 AM</div>
+        </div>
+        <div class="meal-block">
+          <div class="meal-block-title">🍳 Suggestion — Cook In</div>
+          <div class="meal-option">A proper unhurried breakfast at the house. Eggs, toast, fruit, good coffee. Use up what's left in the fridge. This is often the best meal of the weekend — everyone's a little wistful and it shows.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot hike"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Optional: Jacoby Falls — One Last Walk</div>
+          <div class="event-time">Around 10:30 AM</div>
+        </div>
+        <div class="travel-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          ~25 min from Liberty via Rt 14 S (Trout Run area)
+        </div>
+        <div class="event-body" style="margin-top:10px;">
+          <span class="tag tag-optional">Optional</span><br>
+          A 1.8-mile trail to a 30-foot waterfall, rated 4.7★. Rocky with some creek crossings, but gentle enough to go at your own pace and turn around whenever you like. A nice bookend to the weekend — one last waterfall before everyone points their cars home.
+        </div>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="event-dot travel"></div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-title">Pack Up & Hit the Road</div>
+          <div class="event-time">Noon–2 PM</div>
+        </div>
+        <div class="event-body">
+          Both crews are looking at about 7 hours home. Stock up on road snacks Saturday — Martin's Pantry makes excellent custom deli subs but is <strong>closed Sundays</strong>.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ──────────────── RAINY DAY ──────────────── -->
+<div class="rainy-section">
+  <div class="rainy-header">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3a6880" stroke-width="2"><path d="M20 17.58A5 5 0 0 0 18 8h-1.26A8 8 0 1 0 4 16.25"/><line x1="8" y1="19" x2="8" y2="21"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="16" y1="19" x2="16" y2="21"/></svg>
+    <h2>If It Rains</h2>
+  </div>
+  <p class="rainy-intro">Pennsylvania in late June can bring afternoon storms. Here's how to pivot without losing the day.</p>
+  <div class="rainy-grid">
+    <div class="rainy-card">
+      <div class="rainy-card-title">📚 Home Base Day</div>
+      <p>The house was booked for a reason. Lean into it: books, board games, movies, padel in the drizzle (actually fun). Sometimes a rain day becomes the most remembered one.</p>
+    </div>
+    <div class="rainy-card">
+      <div class="rainy-card-title">🏛 Wellsboro Main Street</div>
+      <p>A well-preserved Victorian downtown with antique shops, boutiques, a diner, and covered awnings. Easy to browse in light rain, about 45 min away.</p>
+    </div>
+    <div class="rainy-card">
+      <div class="rainy-card-title">🍺 Yorkholo Brewing</div>
+      <p>A beautiful restored building in Mansfield (~30 min). Trivia nights, great food, local craft beers. A perfect afternoon refuge if the weather turns.</p>
+    </div>
+    <div class="rainy-card">
+      <div class="rainy-card-title">🪨 Liberty Indian Museum</div>
+      <p>A small local museum right in Liberty covering Native American history, beadwork, and artifacts. Rated 4.9★ — an underrated rainy-hour stop steps from the house.</p>
+    </div>
+    <div class="rainy-card">
+      <div class="rainy-card-title">🌊 Hike Anyway</div>
+      <p>Waterfalls are actually better in the rain. Jacoby Falls or McIntyre in light rain can be genuinely magical — bring rain jackets and embrace it.</p>
+    </div>
+    <div class="rainy-card">
+      <div class="rainy-card-title">🎬 Movie Block</div>
+      <p>Make popcorn, pick something terrible together, and let D & S have first pick. Underrated family bonding, every time.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ──────────────── TIPS ──────────────── -->
+<div class="tips-box">
+  <h2>Good to Know</h2>
+  <ul class="tips-list">
+    <li><strong>Martin's Pantry</strong> (Rt 414, Liberty) — part deli, part general store, part soft-serve ice cream counter. Your best local grocery stop. Stock up Thursday on arrival. Closed Sundays.</li>
+    <li><strong>Bug spray is non-negotiable</strong> at McIntyre Wild Area. Reviews specifically call this out. Long sleeves help in the hollow.</li>
+    <li><strong>Cell service</strong> can be spotty in the hollows and on trails. Download offline maps (AllTrails or Google Maps offline) before heading out.</li>
+    <li><strong>Trail shoes or waterproof hikers</strong> are needed for McIntyre and Jacoby Falls — both have creek crossings. Sneakers will get soaked.</li>
+    <li><strong>Leonard Harrison visitor center</strong> has concessions, a gift shop, and restrooms on site — reopened in 2024 after renovation. No need to bring your own coffee to the canyon.</li>
+    <li><strong>Cherry Springs tip:</strong> Check the moon phase before committing. A full or near-full moon washes out the Milky Way. Within a few days of the new moon is ideal.</li>
+    <li><strong>The Roost (Wellsboro)</strong> is a great lunch spot but doesn't open until noon on Fridays and Saturdays. Closed Mondays.</li>
+    <li><strong>Rattlesnakes</strong> are present at McIntyre and Golden Eagle Trail. Stay on marked trails, don't reach under rocks. Not aggressive — just worth knowing.</li>
+    <li><strong>Padel basics:</strong> Serves must bounce once before hitting the back wall. Points play like tennis. The learning curve is gentle — you'll be rallying within 20 minutes.</li>
+    <li><strong>Approximate drives from Liberty:</strong> Wellsboro ~45 min · Leonard Harrison ~45 min · McIntyre ~35 min · Cherry Springs ~1.5 hr · Jacoby Falls ~25 min · Farmer's Table ~20 min · Yorkholo ~30 min.</li>
+  </ul>
+</div>
+
+<!-- ──────────────── POLL ──────────────── -->
+<div class="poll-section">
+  <h2>What Are You Into?</h2>
+  <p class="poll-intro">Answer a few quick questions so everyone can see what the group is up for. Helps us figure out what to prioritize — no wrong answers.</p>
+
+  <div class="poll-name-row">
+    <label for="poll-name">Your name:</label>
+    <input type="text" id="poll-name" class="poll-name-input" placeholder="e.g. A, D, M…">
+  </div>
+
+  <div class="poll-question" id="q1">
+    <div class="poll-question-label">1. How do you feel about hiking?</div>
+    <div class="poll-options">
+      <button class="poll-btn" onclick="selectBtn(this,'q1','The bigger the better')">The bigger the better</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q1','Up for a moderate trail')">Up for a moderate trail</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q1','Easy walks & views only')">Easy walks & views only</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q1','I\'ll stay at the house')">I'll stay at the house</button>
+    </div>
+  </div>
+
+  <div class="poll-question" id="q2">
+    <div class="poll-question-label">2. How interested are you in stargazing at Cherry Springs?</div>
+    <div class="poll-options">
+      <button class="poll-btn" onclick="selectBtn(this,'q2','Yes — let\'s do it')">Yes — let's do it</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q2','Maybe, if the timing works')">Maybe, if the timing works</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q2','I\'d rather stay in')">I'd rather stay in</button>
+    </div>
+  </div>
+
+  <div class="poll-question" id="q3">
+    <div class="poll-question-label">3. What kind of evenings sound good to you?</div>
+    <div class="poll-options">
+      <button class="poll-btn" onclick="selectBtn(this,'q3','Going out for dinner')">Going out for dinner</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q3','Grilling at the house')">Grilling at the house</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q3','Mix of both')">Mix of both</button>
+    </div>
+  </div>
+
+  <div class="poll-question" id="q4">
+    <div class="poll-question-label">4. Padel — how much are you in?</div>
+    <div class="poll-options">
+      <button class="poll-btn" onclick="selectBtn(this,'q4','All in, let\'s play every day')">All in, every day</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q4','Happy to play once or twice')">Once or twice sounds right</button>
+      <button class="poll-btn" onclick="selectBtn(this,'q4','I\'ll watch and laugh')">I'll watch and laugh</button>
+    </div>
+  </div>
+
+  <button class="poll-submit" onclick="submitPoll()">Submit my answers</button>
+
+  <div class="poll-results" id="poll-results">
+    <div style="margin-bottom:16px; font-weight:600; font-size:14px; color:var(--forest);">What the group said so far:</div>
+    <div id="results-content"></div>
+  </div>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  Liberty, PA · June 25–28, 2026 · Share this link with everyone before the trip
+</footer>
+
+<script>
+  const answers = {};
+  const colorClasses = ['selected', 'selected-gold', 'selected-sky'];
+
+  function selectBtn(btn, question, value) {
+    const btns = btn.parentElement.querySelectorAll('.poll-btn');
+    btns.forEach(b => b.classList.remove('selected','selected-gold','selected-sky'));
+    const idx = ['q1','q2','q3','q4'].indexOf(question);
+    btn.classList.add(colorClasses[idx % colorClasses.length]);
+    answers[question] = value;
+  }
+
+  function submitPoll() {
+    const name = document.getElementById('poll-name').value.trim();
+    if (!name) { alert('Add your name first!'); return; }
+    const required = ['q1','q2','q3','q4'];
+    for (const q of required) {
+      if (!answers[q]) { alert('Answer all four questions first.'); return; }
+    }
+
+    // Store in localStorage as fallback (note: won't persist across devices)
+    const key = 'liberty2026_responses';
+    let responses = [];
+    try { responses = JSON.parse(localStorage.getItem(key) || '[]'); } catch(e) {}
+    // Remove any prior submission from same name
+    responses = responses.filter(r => r.name.toLowerCase() !== name.toLowerCase());
+    responses.push({ name, ...answers, ts: Date.now() });
+    try { localStorage.setItem(key, JSON.stringify(responses)); } catch(e) {}
+
+    renderResults(responses);
+    document.getElementById('poll-results').classList.add('visible');
+    document.querySelector('.poll-submit').textContent = 'Update my answers';
+    document.querySelector('.poll-submit').style.background = 'var(--stone)';
+  }
+
+  function renderResults(responses) {
+    const qLabels = {
+      q1: 'Hiking',
+      q2: 'Cherry Springs Stargazing',
+      q3: 'Evening style',
+      q4: 'Padel enthusiasm'
+    };
+    let html = '';
+    for (const [q, label] of Object.entries(qLabels)) {
+      html += `<div class="result-group"><div class="result-label">${label}</div><div class="responses-list">`;
+      for (const r of responses) {
+        if (r[q]) html += `<div class="response-chip"><strong>${r.name}:</strong> ${r[q]}</div>`;
+      }
+      html += `</div></div>`;
+    }
+    document.getElementById('results-content').innerHTML = html;
+  }
+
+  // Load any saved responses on page load
+  try {
+    const saved = JSON.parse(localStorage.getItem('liberty2026_responses') || '[]');
+    if (saved.length > 0) {
+      renderResults(saved);
+      document.getElementById('poll-results').classList.add('visible');
+    }
+  } catch(e) {}
+</script>
+
+</body>
+</html>
