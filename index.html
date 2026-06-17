@@ -33,19 +33,27 @@
     background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
     background-size: cover;
     color: var(--cream);
-    
-    /* 1. Fixes the text placement */
     text-align: left;
-    padding: 24px 32px 24px 120px; /* Top, Right, Bottom, Left spacing */
-    
-    /* 2. Forces the image area to be tall and spacious */
+    padding: 24px 32px 24px 120px; 
     min-height: 280px; 
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Keeps text right at the top */
-    
+    justify-content: flex-start;
     position: relative;
     overflow: hidden;
+  }
+
+  /* ── MOBILE OPTIMIZATION (iPhones & Small Screens) ── */
+  @media (max-width: 600px) {
+    .hero {
+      /* 1. Forces the entire width of the image to fit the screen */
+      background-size: 100% auto; 
+      background-position: top center;
+      
+      /* 2. Adjusts padding so text fits nicely over the now-smaller banner */
+      padding: 16px 16px 16px 24px; 
+      min-height: 180px; /* Lowers the height so the box matches the image aspect ratio */
+    }
   }
   .hero::before {
     content: '';
