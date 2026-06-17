@@ -30,12 +30,11 @@
 
   /* ── HERO (Default / Desktop Screens) ── */
   .hero {
-    /* Uses the LARGE image for desktop displays */
     background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop-large.png") no-repeat center 25%;
     background-size: cover;
     color: var(--cream);
     text-align: left;
-    padding: 12px 32px 50px 120px; 
+    padding: 0px 32px 50px 120px; 
     min-height: 280px; 
     display: flex;
     flex-direction: column;
@@ -56,16 +55,19 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--mist);
-    margin-bottom: 4px;
+    margin-top: 0px;
+    margin-bottom: 2px;
     position: relative;
+    line-height: 1.1;
   }
   .hero h1 {
     text-shadow: 0 2px 6px rgba(0,0,0,.85);
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.6rem, 4vw, 2.5rem); 
     font-weight: 700;
-    line-height: 1.15;
+    line-height: 1.1;
     position: relative;
+    margin-top: 0px;
     margin-bottom: 0px;
   }
   .hero-sub {
@@ -73,34 +75,8 @@
     font-size: 13px;
     color: var(--mist);
     position: absolute; 
-    bottom: 15px;       
+    bottom: 2px;       
     left: 120px;        
-  }
-
- /* ── MOBILE OPTIMIZATION (iPhones & Small Screens) ── */
-  @media (max-width: 600px) {
-    .hero {
-      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
-      background-size: 100% auto; 
-      background-position: top center;
-      
-      /* Force everything up and remove top padding cushion */
-      padding: 0px 16px 30px 24px; 
-      justify-content: flex-start; 
-      min-height: 180px; 
-    }
-    .hero-eyebrow {
-      margin-top: 0px; /* Forces date to hug the very top line on mobile */
-    }
-    .hero h1 {
-      font-size: 1.4rem; 
-      margin-top: 0px; /* Removes any browser padding forcing the title down */
-    }
-    .hero-sub {
-      left: 24px;    
-      bottom: 2px;  /* Slams the location text to the absolute bottom floor */
-      font-size: 11px;
-    }
   }
 
   /* ── INTRO NOTE ── */
@@ -266,7 +242,7 @@
     margin-bottom: 4px;
   }
   .tag-optional { background: #f3eaf7; color: #6a3a8a; }
-  .tag-all      { background: #eaf2f7; color: #3a6880; }
+  .tag-all       { background: #eaf2f7; color: #3a6880; }
 
   /* ── MEAL BLOCKS ── */
   .meal-block {
@@ -373,8 +349,28 @@
     color: var(--stone);
   }
 
+  /* ── ALL MOBILE STYLES CONSOLIDATED HERE ── */
   @media (max-width: 600px) {
-    .hero { padding: 44px 20px 40px; }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+      background-size: 100% auto; 
+      background-position: top center;
+      padding: 0px 16px 30px 24px; 
+      justify-content: flex-start; 
+      min-height: 180px; 
+    }
+    .hero-eyebrow {
+      margin-top: 0px;
+    }
+    .hero h1 {
+      font-size: 1.4rem; 
+      margin-top: 0px;
+    }
+    .hero-sub {
+      left: 24px;    
+      bottom: 2px;  
+      font-size: 11px;
+    }
     .timeline { padding-left: 28px; }
     .event-dot { left: -25px; }
     .timeline::before { left: 8px; }
