@@ -77,22 +77,28 @@
     left: 120px;        
   }
 
-  /* ── MOBILE OPTIMIZATION (iPhones & Small Screens) ── */
+ /* ── MOBILE OPTIMIZATION (iPhones & Small Screens) ── */
   @media (max-width: 600px) {
     .hero {
-      /* Swaps out the image to the standard crop just for mobile screens */
       background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
       background-size: 100% auto; 
       background-position: top center;
-      padding: 10px 16px 40px 24px; 
+      
+      /* Force everything up and remove top padding cushion */
+      padding: 0px 16px 30px 24px; 
+      justify-content: flex-start; 
       min-height: 180px; 
+    }
+    .hero-eyebrow {
+      margin-top: 0px; /* Forces date to hug the very top line on mobile */
     }
     .hero h1 {
       font-size: 1.4rem; 
+      margin-top: 0px; /* Removes any browser padding forcing the title down */
     }
     .hero-sub {
       left: 24px;    
-      bottom: 10px;  
+      bottom: 2px;  /* Slams the location text to the absolute bottom floor */
       font-size: 11px;
     }
   }
