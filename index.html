@@ -28,58 +28,48 @@
     line-height: 1.65;
   }
 
-  /* ── HERO IMAGE ── */
-.hero {
-  /* Using your exact .png file path */
-  background: url("assets/family-trip-edited-old-photo-crop.png") no-repeat center center;
-  /* Forces the entire image to stay visible without cropping */
-  background-size: contain; 
-  /* Adjust this height to match your photo's proportions */
-  height: 500px; 
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-/* The dotted pattern overlay stays over the photo */
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23C8D8CC' opacity='0.15'/%3E%3C/svg%3E") repeat;
-}
-
-/* ── HERO TEXT (BELOW IMAGE) ── */
-.hero-content-bottom {
-  padding: 32px 32px;
-  text-align: center;
-}
-
-.hero-eyebrow {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  /* Deep forest green for high contrast on light backgrounds */
-  color: #1a2e22; 
-  margin-bottom: 16px;
-}
-
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 6vw, 3.6rem);
-  font-weight: 700;
-  line-height: 1.12;
-  margin-bottom: 12px;
-  /* Dark near-black color for maximum readability */
-  color: #0f1b14; 
-}
-
-.hero-sub {
-  font-size: 14px;
-  color: #1a2e22; 
-  margin-bottom: 8px;
-}
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+    background-size: cover;
+    color: var(--cream);
+    padding: 64px 32px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23C8D8CC' opacity='0.15'/%3E%3C/svg%3E") repeat;
+  }
+  .hero-eyebrow {
+    text-shadow: 0 2px 6px rgba(0,0,0,.85);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 {
+    text-shadow: 0 2px 6px rgba(0,0,0,.85);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.12;
+    position: relative;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    text-shadow: 0 2px 6px rgba(0,0,0,.85);
+    font-size: 14px;
+    color: var(--mist);
+    position: relative;
+    margin-bottom: 8px;
+  }
 
   /* ── INTRO NOTE ── */
   .intro-note {
@@ -106,7 +96,8 @@
   }
   .legend-item { display: flex; align-items: center; gap: 6px; }
   .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-  .dot-hike    { background: var(--forest); }
+  .dot-hike    { background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+    background-size: cover; }
   .dot-meal    { background: var(--gold); }
   .dot-leisure { background: var(--sky); }
   .dot-travel  { background: #bbb; }
@@ -161,7 +152,8 @@
     border: 2px solid var(--light);
     z-index: 1;
   }
-  .event-dot.hike    { background: var(--forest); }
+  .event-dot.hike    { background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+    background-size: cover; }
   .event-dot.meal    { background: var(--gold); }
   .event-dot.leisure { background: var(--sky); }
   .event-dot.travel  { background: #bbb; }
@@ -301,7 +293,8 @@
 
   /* ── TIPS BOX ── */
   .tips-box {
-    background: var(--forest);
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+    background-size: cover;
     color: var(--cream);
     border-radius: 12px;
     padding: 28px;
@@ -373,7 +366,7 @@
 
 <!-- INTRO NOTE -->
 <div class="intro-note">
-  All times are loose suggestions — treat this as a menu of ideas, not a schedule. Pick what sounds good, skip what doesn't, and make it up as you go.
+  These are just ideas, not a schedule. Do the things that sound fun, skip the ones that don't, and adjust as we go.
 </div>
 
 <!-- LEGEND -->
@@ -402,7 +395,7 @@
           <div class="event-time">Around 4 PM</div>
         </div>
         <div class="event-body">
-          Claim rooms, drop bags, take a breath. Washington Courthouse folks and the Boston crew are both looking at about 7 hours — everyone deserves a minute to decompress before anything else happens.
+          Claim rooms, drop bags, and settle in. Washington Courthouse and Boston are both long drives.
         </div>
       </div>
     </div>
@@ -411,11 +404,11 @@
       <div class="event-dot leisure"></div>
       <div class="event-card">
         <div class="event-header">
-          <div class="event-title">Try the Pickleball Court</div>
+          <div class="event-title">First Pickleball Match</div>
           <div class="event-time">Around 5 PM</div>
         </div>
         <div class="event-body">
-          Nobody in the group has played — which makes it perfect. Pickleball is on a smaller court with walls in play (think tennis meets squash), very forgiving for beginners, and genuinely fun to figure out together. Even 30–45 minutes of rallying is a great first-night icebreaker. No pressure, all laughs.
+          Nobody has to be good at this. Think tennis on a smaller court with walls. Sue and Dave are apparently all in already, so we'll see if everyone else gets hooked too.
         </div>
       </div>
     </div>
@@ -429,7 +422,7 @@
         </div>
         <div class="meal-block">
           <div class="meal-block-title">🍽 Suggestion — Cook In</div>
-          <div class="meal-option">Arrival night is best kept easy — stock up at Martin's Pantry on the way in (see tips below) and put together whatever's low-effort: burgers on the grill, pasta, sheet-pan chicken. The point is the porch and the people, not the food.</div>
+          <div class="meal-option">Keep dinner easy. Stock up at Martin's Pantry on the way in and throw together whatever sounds good.</div>
         </div>
       </div>
     </div>
@@ -442,7 +435,7 @@
           <div class="event-time">After dinner</div>
         </div>
         <div class="event-body">
-          Card games, a movie, or just sitting around talking. A low-key first night is the right call — it's the first time the whole group has been in the same place, which is its own kind of good.
+          Card games, a movie, or just hanging out and catching up. After a long travel day, keeping things simple is probably the move.
         </div>
       </div>
     </div>
@@ -487,11 +480,9 @@
           ~45 min from Liberty via Rt 287 N → Rt 660 W
         </div>
         <div class="event-body" style="margin-top:10px;">
-          One of the most dramatic views in Pennsylvania — a 1,450-foot gorge carved by Pine Creek. The overlook at Leonard Harrison is just a few minutes' walk from the parking lot (paved, easy), with a visitor center, concessions, and restrooms on site. Worth the drive for the view alone.<br><br>
+          The overlook is the main attraction here and it's worth the drive all by itself. The views over Pine Creek Gorge are spectacular and require very little walking. There are a few easy rim trails nearby if people want to stretch their legs, plus a visitor center, restrooms, and a snack stand.<br><br>
 
-          <strong>For those who want more trail:</strong> The Turkey Path descends 1.7 miles and 800 feet to the canyon floor at Pine Creek — steep, rewarding, and about 2–3 hours round trip. At the bottom you can connect to the Pine Creek Rail Trail (flat gravel) and wander as far as you like before climbing back up.<br><br>
-
-          One easy approach: hikers drop down the Turkey Path while anyone who prefers can enjoy the overlook, explore the rim trail (1.5 mi, very gentle), grab a snack from the concessions stand, and soak up the views until everyone reconvenes at the parking lot.
+          Anyone looking for more activity can tackle part of the Turkey Path, but that's entirely optional and probably not the main event for this group. Most of us will likely be perfectly happy exploring the overlook area, walking a rim trail, and taking in the views.
         </div>
       </div>
     </div>
@@ -527,7 +518,7 @@
           <div class="event-time">Around 3:30 PM</div>
         </div>
         <div class="event-body">
-          Decompress. More pickleball if there's energy. Read on the porch. Nap. This is the kind of unplanned time family trips are actually made of.
+          Free time. Read on the porch, take a nap, play another pickleball match, or do absolutely nothing.
         </div>
       </div>
     </div>
@@ -552,17 +543,16 @@
       <div class="event-dot leisure"></div>
       <div class="event-card">
         <div class="event-header">
-          <div class="event-title">Optional: Cherry Springs Stargazing</div>
+          <div class="event-title">Cherry Springs Stargazing</div>
           <div class="event-time">After dinner (9:30 PM+)</div>
         </div>
         <div class="event-body">
-          <span class="tag tag-optional">Optional</span><br>
-          Cherry Springs State Park is one of the darkest skies east of the Mississippi — the Milky Way is visible with the naked eye on a clear night. It's a late commitment (drive out after dinner, arrive around 11 PM), but unlike most stargazing spots, it requires no hiking — just blankets, chairs, and lying on your back looking up.<br><br>
+          Cherry Springs State Park is one of the darkest skies east of the Mississippi — the Milky Way is visible with the naked eye on a clear night. This is the plan for Friday night if the skies are reasonably clear. No hiking required. Just blankets, chairs, and looking up.<br><br>
           <strong>What to bring:</strong> warm layers (summer nights get cold up there), blankets or reclining chairs, red flashlights only (white light ruins night vision for everyone). Check the forecast and moon phase beforehand — a night close to the new moon is ideal.
         </div>
         <div class="travel-note">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          ~1 hr 30 min each way via Rt 44 S toward Coudersport. Best Friday or Saturday; pick the clearer night.
+          ~1 hr 30 min each way via Rt 44 S toward Coudersport. Saturday serves as the rain date.
         </div>
       </div>
     </div>
@@ -607,9 +597,7 @@
           ~35 min from Liberty via Rt 14 S toward Roaring Branch
         </div>
         <div class="event-body" style="margin-top:10px;">
-          The local gem. Rock Run is a stunning crystal-clear creek running through a forested hollow, with waterfalls, swimming holes, and dramatic terrain. Rated 4.8★. Trails run anywhere from 3 to 6+ miles depending on how far you follow the creek. Expect creek crossings and some overgrown sections — trail shoes and bug spray are essential.<br><br>
-
-          Those who'd rather have a relaxed morning can skip this one and explore Liberty, walk the path along the trout stream at Liberty Community Park, or hang around the house with a book. The McIntyre crew can plan to be back by early afternoon.
+          Rock Run follows a beautiful mountain stream with clear pools, waterfalls, and plenty of spots to stop along the way. The nice thing about this hike is that you can make it as short or as long as you want. Walk for an hour, turn around, and you've still seen some of the best parts. Expect a few creek crossings and bring bug spray.<br><br>Those who'd rather have a relaxed morning can explore Liberty, walk at the community park, or stay back at the house.
         </div>
         <div class="warning-note">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -640,7 +628,7 @@
           <div class="event-time">Around 2:30 PM</div>
         </div>
         <div class="event-body">
-          Read, nap, play more pickleball, walk into Liberty, or nothing at all. For anyone with more trail energy, the <strong>Golden Eagle Trail</strong> near Cammal (~50 min away) is a beautiful 4-mile loop up to Raven Rocks with canyon views — a solid option for an afternoon add-on.
+          Pickleball, reading, naps, wandering into town, or absolutely nothing. If anyone still wants more hiking, the <strong>Golden Eagle Trail</strong> near Cammal (~50 min away) is a good afternoon option with nice views from Raven Rocks.
         </div>
       </div>
     </div>
@@ -670,7 +658,7 @@
         </div>
         <div class="event-body">
           <span class="tag tag-optional">Optional</span><br>
-          If Cherry Springs didn't happen Friday, tonight's the other chance. Or just stay put — sit outside with the group under whatever sky you have. Even in Liberty, away from city light, the nights are noticeably clear. A long last evening together.
+          If Friday was cloudy, tonight is the rain date for Cherry Springs. Otherwise, stay in, play cards, sit outside, and enjoy the evening.
         </div>
       </div>
     </div>
@@ -687,52 +675,31 @@
     <div class="day-date">June 28 · Heading Home</div>
   </div>
   <div class="timeline">
-
     <div class="event">
       <div class="event-dot meal"></div>
       <div class="event-card">
         <div class="event-header">
-          <div class="event-title">Last Breakfast Together</div>
-          <div class="event-time">Around 9 AM</div>
+          <div class="event-title">Breakfast Together</div>
+          <div class="event-time">Around 8 AM</div>
         </div>
         <div class="meal-block">
-          <div class="meal-block-title">🍳 Suggestion — Cook In</div>
-          <div class="meal-option">A proper unhurried breakfast at the house. Eggs, toast, fruit, good coffee. Use up what's left in the fridge. This is often the best meal of the weekend — everyone's a little wistful and it shows.</div>
+          <div class="meal-block-title">🍳 Breakfast</div>
+          <div class="meal-option">One last breakfast at the house. Finish whatever food is left, have another cup of coffee, and start packing up.</div>
         </div>
       </div>
     </div>
-
-    <div class="event">
-      <div class="event-dot hike"></div>
-      <div class="event-card">
-        <div class="event-header">
-          <div class="event-title">Optional: Jacoby Falls — One Last Walk</div>
-          <div class="event-time">Around 10:30 AM</div>
-        </div>
-        <div class="travel-note">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          ~25 min from Liberty via Rt 14 S (Trout Run area)
-        </div>
-        <div class="event-body" style="margin-top:10px;">
-          <span class="tag tag-optional">Optional</span><br>
-          A 1.8-mile trail to a 30-foot waterfall, rated 4.7★. Rocky with some creek crossings, but gentle enough to go at your own pace and turn around whenever you like. A nice bookend to the weekend — one last waterfall before everyone points their cars home.
-        </div>
-      </div>
-    </div>
-
     <div class="event">
       <div class="event-dot travel"></div>
       <div class="event-card">
         <div class="event-header">
           <div class="event-title">Pack Up & Hit the Road</div>
-          <div class="event-time">Noon–2 PM</div>
+          <div class="event-time">Around 10 AM</div>
         </div>
         <div class="event-body">
-          Both crews are looking at about 7 hours home. Stock up on road snacks Saturday — Martin's Pantry makes excellent custom deli subs but is <strong>closed Sundays</strong>.
+          Washington Courthouse and Boston are both long drives home, so we'll get an early start.
         </div>
       </div>
     </div>
-
   </div>
 </div>
 
@@ -783,7 +750,7 @@
     <li><strong>Cherry Springs tip:</strong> Check the moon phase before committing. A full or near-full moon washes out the Milky Way. Within a few days of the new moon is ideal.</li>
     <li><strong>The Roost (Wellsboro)</strong> is a great lunch spot but doesn't open until noon on Fridays and Saturdays. Closed Mondays.</li>
     <li><strong>Rattlesnakes</strong> are present at McIntyre and Golden Eagle Trail. Stay on marked trails, don't reach under rocks. Not aggressive — just worth knowing.</li>
-    <li><strong>Pickleball basics:</strong> Pingpong on a big court. Points play like tennis. The learning curve is gentle — you'll be rallying within 20 minutes.</li>
+    <li><strong>Pickleball basics:</strong> Basically Pingpong in a tennis court. Points play like tennis. The learning curve is gentle — you'll be rallying within 20 minutes.</li>
     <li><strong>Approximate drives from Liberty:</strong> Wellsboro ~45 min · Leonard Harrison ~45 min · McIntyre ~35 min · Cherry Springs ~1.5 hr · Jacoby Falls ~25 min · Farmer's Table ~20 min · Yorkholo ~30 min.</li>
   </ul>
 </div>
