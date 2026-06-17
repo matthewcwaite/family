@@ -28,32 +28,20 @@
     line-height: 1.65;
   }
 
-  /* ── HERO ── */
+  /* ── HERO (Default / Desktop Screens) ── */
   .hero {
-    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+    /* Uses the LARGE image for desktop displays */
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop-large.png") no-repeat center 25%;
     background-size: cover;
     color: var(--cream);
     text-align: left;
-    padding: 24px 32px 24px 120px; 
+    padding: 12px 32px 50px 120px; 
     min-height: 280px; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     position: relative;
     overflow: hidden;
-  }
-
-  /* ── MOBILE OPTIMIZATION (iPhones & Small Screens) ── */
-  @media (max-width: 600px) {
-    .hero {
-      /* 1. Forces the entire width of the image to fit the screen */
-      background-size: 100% auto; 
-      background-position: top center;
-      
-      /* 2. Adjusts padding so text fits nicely over the now-smaller banner */
-      padding: 16px 16px 16px 24px; 
-      min-height: 180px; /* Lowers the height so the box matches the image aspect ratio */
-    }
   }
   .hero::before {
     content: '';
@@ -68,24 +56,45 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--mist);
-    margin-bottom: 16px;
+    margin-bottom: 4px;
     position: relative;
   }
   .hero h1 {
     text-shadow: 0 2px 6px rgba(0,0,0,.85);
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 6vw, 3.6rem);
+    font-size: clamp(1.6rem, 4vw, 2.5rem); 
     font-weight: 700;
-    line-height: 1.12;
+    line-height: 1.15;
     position: relative;
-    margin-bottom: 12px;
+    margin-bottom: 0px;
   }
   .hero-sub {
     text-shadow: 0 2px 6px rgba(0,0,0,.85);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--mist);
-    position: relative;
-    margin-bottom: 8px;
+    position: absolute; 
+    bottom: 15px;       
+    left: 120px;        
+  }
+
+  /* ── MOBILE OPTIMIZATION (iPhones & Small Screens) ── */
+  @media (max-width: 600px) {
+    .hero {
+      /* Swaps out the image to the standard crop just for mobile screens */
+      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("assets/family-trip-edited-old-photo-crop.png") no-repeat center 25%;
+      background-size: 100% auto; 
+      background-position: top center;
+      padding: 10px 16px 40px 24px; 
+      min-height: 180px; 
+    }
+    .hero h1 {
+      font-size: 1.4rem; 
+    }
+    .hero-sub {
+      left: 24px;    
+      bottom: 10px;  
+      font-size: 11px;
+    }
   }
 
   /* ── INTRO NOTE ── */
