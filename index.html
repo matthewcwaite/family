@@ -28,44 +28,58 @@
     line-height: 1.65;
   }
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--forest);
-    color: var(--cream);
-    padding: 64px 32px 56px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23C8D8CC' opacity='0.15'/%3E%3C/svg%3E") repeat;
-  }
-  .hero-eyebrow {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--mist);
-    margin-bottom: 16px;
-    position: relative;
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.2rem, 6vw, 3.6rem);
-    font-weight: 700;
-    line-height: 1.12;
-    position: relative;
-    margin-bottom: 12px;
-  }
-  .hero-sub {
-    font-size: 14px;
-    color: var(--mist);
-    position: relative;
-    margin-bottom: 8px;
-  }
+  /* ── HERO IMAGE ── */
+.hero {
+  /* Using your exact .png file path */
+  background: url("assets/family-trip-edited-old-photo-crop.png") no-repeat center center;
+  /* Forces the entire image to stay visible without cropping */
+  background-size: contain; 
+  /* Adjust this height to match your photo's proportions */
+  height: 500px; 
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The dotted pattern overlay stays over the photo */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://w3.org' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%23C8D8CC' opacity='0.15'/%3E%3C/svg%3E") repeat;
+}
+
+/* ── HERO TEXT (BELOW IMAGE) ── */
+.hero-content-bottom {
+  padding: 32px 32px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  /* Deep forest green for high contrast on light backgrounds */
+  color: #1a2e22; 
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin-bottom: 12px;
+  /* Dark near-black color for maximum readability */
+  color: #0f1b14; 
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: #1a2e22; 
+  margin-bottom: 8px;
+}
 
   /* ── INTRO NOTE ── */
   .intro-note {
